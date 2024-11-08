@@ -3,9 +3,6 @@
 *.log
 *.toc
 
-# PDF output - usually a bad idea to keep this in Git
-*.pdf
-
 # Latexmk
 *.fdb_latexmk
 
@@ -22,9 +19,3 @@
 *.bbl
 *.blg
 
-# Log created by Adobe Reader
-C:\\nppdf32Log\\debuglog.txt
-
-# Sublime Text Project Files (usually contain absolute paths)
-*.sublime-project
-*.sublime-workspace
