@@ -19,3 +19,5 @@
 *.bbl
 *.blg
 
+# Drawio
+*.drawio.bkp
