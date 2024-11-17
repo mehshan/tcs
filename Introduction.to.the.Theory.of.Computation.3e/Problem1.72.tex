@@ -45,7 +45,11 @@ Show that if $U \neq \phi$, then $U$ contains some string $s$, where $|s| < max(
 \end{problem}
 
 \begin{proof}
-Solution Replace this text with the details of your proof or solution.
+The proof is by contradiction. Assume $U \neq \phi$ and $U$ does not contain some string $s$, where $|s| < max(k_{1}, \; k_{2})$. Without the loss of generality also assume that $k_{1} > k_{2}$. As $U$ is not empty, therefore all strings in $U$ are of length at least $k_{1}$. Let $w$ be some string in $U$ of minimum length, say $n$:
+\[ w = w_{1}w_{2}w_{3} \cdots w_{n}, \; 0 < k_{2} < k_{1} \leq n\]
+Then, according to the definitions given in Problem 1.52 (Myhill–Nerode theorem), $X$ is pairwise distinguishable by $U$, and $X \subseteq I$, where $I$ is some index of U:
+\[ X = \{ \epsilon, \; w_{1}, \; w_{1}w_{2}, \; w_{1}w_{2}w_{3}, \; w_{1}w_{2}w_{3}\cdots w_{n - 1}, \;  w_{1}w_{2}w_{3}\cdots w_{n} \} \]
+As $U = L(M_{1}) \cup L(M_{2})$, so either $w \in L(M_{1})$ or $w \in L(M_{2})$. This means that $X$ must also be the subset of some index of either $L(M_{1})$ or $L(M_{2})$. $|X| = n + 1$, therefore any DFA that recognizes a language containing $w$ cannot have fewer than $n + 1$ states. Hence, either $k_{1} \geq n + 1$ or $k_{2} \geq n + 1$, which is a contradiction.
 \end{proof}
 
 \begin{problem}[Part]{b}
