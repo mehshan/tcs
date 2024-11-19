@@ -76,11 +76,11 @@ $\displaystyle \delta(q_{i}^u,\ a) \ =\begin{cases}
 \end{proof}
 
 \begin{problem}[Part]{b}
-Let $B = \{0^{k}1u0^{k} \; | \; k \geq 1 \; and \; u \in \Sigma^{*}\}$. Show that B is not regular.
+Let $B = \{0^{k}1u0^{k} \; | \; k \geq 1 \; and \; u \in \Sigma^{*}\}$. Show that $B$ is not regular.
 \end{problem}
 
 \begin{proof}
-Solution Replace this text with the details of your proof or solution.
+The proof is by contradiction. Assume to the contrary that $B$ is regular. Let $p$ be the pumping length given by the pumping lemma. Choose $s$ to be the string $0^p10^p$ ($u = \epsilon$). Because $s \in B$ and $|s| \geq p$, the pumping lemma guarantees that $s$ can be split into three pieces, $s = xyz$, where for any $i \geq 0$ the string $xy^iz \in B$. According to the condition 3 of the pumping lemma, $y$ can only be $0s$. The string $xyyz$ has more $0s$ before the $1$ then after it, so $xyyz \notin B$, which is a contradiction.
 \end{proof}
 
 \end{document}
