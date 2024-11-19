@@ -36,7 +36,7 @@ Computation}\hfill\textbf{\myname}\\[0.01in]
 \textbf{Chapter 1: Reqular Languages}\hfill\textbf{\dated}\\
 \smallskip\hrule\bigskip
 
-\begin{problem}{1.72}
+\begin{problem}{1.71}
 Let $\Sigma = {0, 1}$.
 \end{problem}
 
@@ -44,8 +44,35 @@ Let $\Sigma = {0, 1}$.
 Let $A = \{0^{k}u0^{k} \; | \; k \geq 1 \; and \; u \in \Sigma^{*}\}$. Show that A is regular.
 \end{problem}
 
+\begin{idea}
+State diagram of an NFA that recognizes $A_{k=2}$.
+\begin{center}
+\includegraphics[scale=1.0]{Figures/Problem1.71.pdf}
+\end{center}
+\end{idea}
+
 \begin{proof}
-Solution Replace this text with the details of your proof or solution.
+The proof is by construction.
+Construct the NFA $N = (Q, \; \Sigma, \; \delta, \; q_{0}, \; F)$ that recognizes $A$:
+\begin{enumerate}
+\item $Q = Q^x \cup Q^y \cup Q^z$, where:
+\[ Q^x = \{q_{1}^x, \; q_{2}^x, \; q_{3}^x, \; \cdots, \; q_{k}^x\} \]
+\[ Q^y = \{q_{1}^y\} \]
+\[ Q^z = \{q_{1}^z, \; q_{2}^z, \; q_{3}^z, \; \cdots, \; q_{k}^z\} \]
+\item $q_{0} = q_{1}^a$
+\item $F = \{q_{k}^c\}$
+\item Define $\delta$ so that for any $q_{i}^u \in Q$ and any $a \in \Sigma$:
+\end{enumerate}
+\begin{center}
+$\displaystyle \delta(q_{i}^u,\ a) \ =\begin{cases}
+\{q_{i+1}^x\} & u=x \ ,\ i<k \ and \ a = 0 \\
+\{q_{1}^y\} & u=x \ , \ i=k \ and \ a = 0 \\
+\{q_{1}^y, \ q_{1}^z\} & u=y \ , \ i=1 \ and \ a = 0 \\
+\{q_{1}^y\} & u=y \ , \ i=1 \ and \ a = 1 \\
+\{q_{i+1}^z\} & u=z \ ,\ i<k \ and \ a = 0 \\
+\phi & u=z \ ,\ i=k
+\end{cases} \ \ $
+\end{center}
 \end{proof}
 
 \begin{problem}[Part]{b}
