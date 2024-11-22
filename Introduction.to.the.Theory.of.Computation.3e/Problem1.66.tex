@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+
+\parindent0in
+\pagestyle{plain}
+\thispagestyle{plain}
+
+\newcommand{\myname}{Mehshan Mustafa}
+\newcommand{\dated}{\today}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+\newenvironment{idea}[2][Proof Idea.]{\textit{#1} #2}
+
+\begin{document}
+
+\textbf{Introduction to the Theory of
+Computation}\hfill\textbf{\myname}\\[0.01in]
+\textbf{Chapter 1: Reqular Languages}\hfill\textbf{\dated}\\
+\smallskip\hrule\bigskip
+
+\begin{problem}{1.66}
+A homomorphism is a function $f : \Sigma \longrightarrow \Gamma^{*}$ from one alphabet to strings over another alphabet. We can extend $f$ to operate on strings by defining $f(w) = f(w_{1})f(w_{2}) \cdots f(w_{n})$, where $w = w_{1}w_{2} \cdots w_{n}$ and  each $w_{i} \in \Sigma$. We further
+extend $f$ to operate on languages by defining $f(A) = \{f(w) \ | \ w \in A\}$, for any language A.
+\end{problem}
+
+\begin{problem}[Part]{a}
+Show, by giving a formal construction, that the class of regular languages
+is closed under homomorphism. In other words, given a DFA $M$ that recognizes $B$ and a homomorphism $f$, construct a finite automaton $M'$ that recognizes $f(B)$. Consider the machine $M'$ that you constructed. Is it a DFA in every case?
+\end{problem}
+
+\begin{proof}
+Solution Replace this text with the details of your proof or solution.
+\end{proof}
+
+\begin{problem}[Part]{b}
+Show, by giving an example, that the class of non-regular languages is not
+closed under homomorphism.
+\end{problem}
+
+\begin{proof}
+Solution Replace this text with the details of your proof or solution.
+\end{proof}
+
+\end{document}
