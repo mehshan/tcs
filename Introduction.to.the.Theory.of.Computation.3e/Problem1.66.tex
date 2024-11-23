@@ -46,6 +46,24 @@ Show, by giving a formal construction, that the class of regular languages
 is closed under homomorphism. In other words, given a DFA $M$ that recognizes $B$ and a homomorphism $f$, construct a finite automaton $M'$ that recognizes $f(B)$. Consider the machine $M'$ that you constructed. Is it a DFA in every case?
 \end{problem}
 
+\begin{idea}
+Let $\Sigma = \{a, b\}$, $\Gamma = \{0, 1\}$, and $B = (ab)^{+}$. Define the homomorphism function $f$ on $\Sigma$ to be $f(a) = 11$, and $f(b) = 00$. Therefore, $f(ab) = 1100$ and $f(abab) = 11001100$.
+\[ B = \{ab, abab, ababab, \cdots \}, and \ f(B) = \{1100, 11001100, 110011001100, \cdots \} \]
+\begin{center}
+\includegraphics[scale=0.8]{Figures/Problem1.66a.pdf} \\
+State diagram of the DFA $M$ that recognizes $B$.
+\end{center}
+\end{idea}
+
+Next, construct a finite automaton $A_{f(a)}$ to recognize the string $f(a)$ for each $a \in \Sigma$. The DFA $M'$ to recognize $f(B)$ can be constructed by taking the DFA $M$ and by carrying out following steps for every transition between some initial state $q_{i}$ and subsequent state $q_{j}$ over some symbol $a$:
+\begin{enumerate}
+\item Remove the transition.
+\item Add an $\epsilon$-transition that connects state $q_{i}$ to the start state of the DFA $A_{f(a)}$
+\item Connect accept state of the DFA $A_{f(a)}$ with $q_{j}$ with an $\epsilon$-transition.
+\item Make the accept state of $A_{f(a)}$ a non-accept state.
+\end{enumerate}
+
+
 \begin{proof}
 Solution Replace this text with the details of your proof or solution.
 \end{proof}
