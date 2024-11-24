@@ -43,7 +43,7 @@ extend $f$ to operate on languages by defining $f(A) = \{f(w) \ | \ w \in A\}$, 
 
 \begin{problem}[Part]{a}
 Show, by giving a formal construction, that the class of regular languages
-is closed under homomorphism. In other words, given a DFA $M$ that recognizes $B$ and a homomorphism $f$, construct a finite automaton $M'$ that recognizes $f(B)$. Consider the machine $M'$ that you constructed. Is it a DFA in every case?
+is closed under homomorphism. In other words, given a DFA $M$ that recognizes $B$ and a homomorphism $f$, construct a finite automaton $M'$ that recognizes $f(B)$.
 \end{problem}
 
 \begin{idea}
@@ -63,10 +63,18 @@ Next, construct a finite automaton $A_{f(a)}$ to recognize the string $f(a)$ for
 \item Make the accept state of $A_{f(a)}$ a non-accept state.
 \end{enumerate}
 
+\begin{center}
+\includegraphics[scale=0.8]{Figures/Problem1.66b.pdf} \\
+Construction of the NFA $M'$. Unnecessary transitions are omitted for simplicity.
+\end{center}
 
 \begin{proof}
-Solution Replace this text with the details of your proof or solution.
+Todo: provide formal construction using above idea.
 \end{proof}
+
+Consider the machine $M'$ that you constructed. Is it a DFA in every case?
+
+If a given homomorphism function $f$ maps two different symbols in $\Sigma$ to a string over $\Gamma$ that starts with the same symbol then $M'$ can have non-deterministic tranisitions.
 
 \begin{problem}[Part]{b}
 Show, by giving an example, that the class of non-regular languages is not
