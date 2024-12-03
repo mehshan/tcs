@@ -44,7 +44,7 @@ $NOPREFIX(A) = \{ w \in A \ | \ no \ proper \ prefix \ of \ w \ is \ a \ member 
 \end{problem}
 
 \begin{idea}
-Let the regular expression $R=0^{*}10^{*}$ describe a language $A$.
+Let the regular expression $R=0^{*}10^{*}$ describe the language $A$.
 \[ A = \{ 1, 01, 10, 010, 001, \cdots \} \]
 \[ NOPREFIX(A) = \{ 1, 01, 001, \cdots \} \]
 \begin{center}
@@ -68,8 +68,24 @@ $\displaystyle \delta'( q,\ a) \ =\begin{cases}
 \end{center}
 \end{proof}
 
+\newpage 
+
 \begin{problem}[Part]{b}
 $NOEXTEND(A) = \{ w \in A \ | \ w \ is \ not \ the \ proper \ prefix \ of \ any \ string \ in \ A \}.$
 \end{problem}
 
+\begin{idea}
+Let $A = \{ aa, aab \}$, then $NOEXTEND(A) = \{ aab \}$
+\begin{center}
+\includegraphics[scale=0.8]{Figures/Problem1.40b.pdf} \\
+State diagrams of finite automata that recognize $A$ (a) and $NOEXTEND(A)$ (b). Take the finite automaton that recognizes $A$, and change any accept state $q$ into non-accept state, if there exists a sequence of transitions from $q$ to any accept state (including $q$ itself).
+\end{center}\end{idea}
+
+\begin{proof}
+The proof is by construction. Let $N = (Q, \Sigma, \delta, q_{0}, F)$ be the DFA that recognizes $A$. Construct the DFA $N' = (Q, \Sigma, \delta, q_{0}, F')$ to recognize $NOEXTEND(A)$:
+\begin{enumerate}
+\item $N'$ has the same states $Q$, start state $q_{0}$ and $\delta$ as $N$.
+\item $F' = \{ q \ | \ q \in F \ and \ there \ is \ no \ sequence \ of \ transitions \ from \ q \ to \ any \ accept \ state \ \}$
+\end{enumerate}
+\end{proof}
 \end{document}
