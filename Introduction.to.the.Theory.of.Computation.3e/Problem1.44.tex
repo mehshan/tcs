@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+
+\parindent0in
+\pagestyle{plain}
+\thispagestyle{plain}
+
+\newcommand{\myname}{Mehshan Mustafa}
+\newcommand{\dated}{\today}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+\newenvironment{idea}[2][Proof Idea.]{\textit{#1} #2}
+
+\begin{document}
+\textbf{Introduction to the Theory of
+Computation}\hfill\textbf{\myname}\\[0.01in]
+\textbf{Chapter 1: Reqular Languages}\hfill\textbf{\dated}\\
+\smallskip\hrule\bigskip
+
+\begin{problem}{1.41}
+Let $B$ and $C$ be languages over $\Sigma = \{0, 1\}$. Define
+\[
+B \xleftarrow{1} C = \{ w \in B \ |  \ for \ some \ y \in C, \ strings \ w \ and \ y \ contain \ equal \ numbers \ of \ 1s \}.
+\]
+Show that the class of regular languages is closed under the $\xleftarrow{1}$ operation.
+\end{problem}
+
+\begin{proof}
+To show that the operation $B \xleftarrow{1} C$ is closed under the class of regular languages we use the closure properties of operations intersection, $Zero^{-}$ and $Zero^{+}$, and give a regular expression that uses these operations to describes  operation $B \xleftarrow{1} C$.
+\\
+\\
+Let $A$ be any language over $\Sigma = \{0, 1\}$. Define
+% \[
+% Zero^{-}(A) = \{ w = y_{1}y_{2} \cdots y_{m} \ | \ x_{1}y_{1}x_{2}y_{2}  \cdots x_{n-1}y_{m}x_{n} \in A, where \ each \ x_{i} \in \{ 0 \}^{*} \ and \ each \ y_{j} \in \{ 1 \}^{*} \}
+% \]
+\[
+Zero^{-}(A) = \{ w \ | \ w \ is \ constructed \ by \ removing \ all \ 0s \ from \ some \ string \ in \ A \}.
+\]
+\[
+Zero^{+}(A) = \{ w \ | \ w \ is \ constructed \ by \ inserting \ any \ number \ of \ 0s \ anywhere \ in \ some \ string \ of \ A \}.
+\]
+The closure properties of $Zero^{-}$ and $Zero^{+}$ are proved in Corollaries 1 and 2. Let $B$ and $C$ be any regular languages over $\Sigma = \{0, 1\}$. The regular expression that describes the operation $B \xleftarrow{1} C$ is:
+\[
+B \xleftarrow{1} C = Zero^{+} \Bigl( Zero^{-}(B) \cap Zero^{-}(C) \Bigr) \cap B
+\]
+\end{proof}
+
+\begin{corollary}{1}
+Show that the class of regular languages is closed under the $Zero^{-}$ operation.
+\end{corollary}
+
+\begin{proof}
+\end{proof}
+
+\begin{corollary}{2}
+Show that the class of regular languages is closed under the $Zero^{+}$ operation.
+\end{corollary}
+
+\begin{proof}
+\end{proof}
+
+\end{document}
