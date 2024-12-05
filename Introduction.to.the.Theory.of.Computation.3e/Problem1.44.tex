@@ -44,15 +44,9 @@ Show that the class of regular languages is closed under the $\xleftarrow{1}$ op
 \end{problem}
 
 \begin{proof}
-To show that the operation $B \xleftarrow{1} C$ is closed under the class of regular languages we use the closure properties of operations intersection, $Zero^{-}$ and $Zero^{+}$, and give a regular expression that uses these operations to describes  operation $B \xleftarrow{1} C$.
-\\
-\\
-Let $A$ be any language over $\Sigma = \{0, 1\}$. Define
-% \[
-% Zero^{-}(A) = \{ w = y_{1}y_{2} \cdots y_{m} \ | \ x_{1}y_{1}x_{2}y_{2}  \cdots x_{n-1}y_{m}x_{n} \in A, where \ each \ x_{i} \in \{ 0 \}^{*} \ and \ each \ y_{j} \in \{ 1 \}^{*} \}
-% \]
+To show that the operation $B \xleftarrow{1} C$ is closed under the class of regular languages we use the closure properties of operations intersection, $Zero^{-}$ and $Zero^{+}$, and give a regular expression that uses these operations to describes  operation $B \xleftarrow{1} C$. Let $A$ be any language over $\Sigma = \{0, 1\}$. Define
 \[
-Zero^{-}(A) = \{ w \ | \ w \ is \ constructed \ by \ removing \ all \ 0s \ from \ some \ string \ in \ A \}.
+Zero^{-}(A) = \{ w \ | \ w \ is \ constructed \ by \ removing \ all \ 0s \ from \ some \ string \ in \ A \}. 
 \]
 \[
 Zero^{+}(A) = \{ w \ | \ w \ is \ constructed \ by \ inserting \ any \ number \ of \ 0s \ anywhere \ in \ some \ string \ of \ A \}.
@@ -64,17 +58,54 @@ B \xleftarrow{1} C = Zero^{+} \Bigl( Zero^{-}(B) \cap Zero^{-}(C) \Bigr) \cap B
 \end{proof}
 
 \begin{corollary}{1}
+Let $A$ be any language over $\Sigma = \{0, 1\}$. Define
+\[
+Zero^{-}(A) = \{ w \ | \ w \ is \ constructed \ by \ removing \ all \ 0s \ from \ some \ string \ in \ A \}.
+\]
 Show that the class of regular languages is closed under the $Zero^{-}$ operation.
 \end{corollary}
 
 \begin{proof}
+The proof is by construction. Let $M = (Q, \Sigma, \delta, q_{0}, F)$ be the DFA that recognizes $A$. Construct the NFA $M' = (Q', \Sigma, \delta', q_{0}', F')$ to recognize $Zero^{-}(A)$:
+\begin{enumerate}
+\item $Q' = Q$
+\item $q_{0}' = q_{0}$
+\item $\displaystyle F' \ =\begin{cases}
+F & A \cap {0}^{+} = \phi \\
+F \cup \{q_{0}\} & A \cap {0}^{+} \neq \phi \\
+\end{cases} \ \ $
+\item Define $\delta'(q, a)$ so that for any $q \in Q'$ and any $a \in \Sigma$:
+\begin{center}
+$\displaystyle \delta'( q,\ a) \ =\begin{cases}
+\{ \delta( q,\ a) \} & a \neq 0 \\
+\phi & a = 0 \\
+\end{cases} \ \ $
+\end{center}
+\end{enumerate}
 \end{proof}
 
 \begin{corollary}{2}
+Let $A$ be any language over $\Sigma = \{0, 1\}$. Define
+\[
+Zero^{+}(A) = \{ w \ | \ w \ is \ constructed \ by \ inserting \ any \ number \ of \ 0s \ anywhere \ in \ some \ string \ of \ A \}.
+\]
 Show that the class of regular languages is closed under the $Zero^{+}$ operation.
 \end{corollary}
 
 \begin{proof}
+The proof is by construction. Let $M = (Q, \Sigma, \delta, q_{0}, F)$ be the DFA that recognizes $A$. Construct the NFA $M' = (Q', \Sigma, \delta', q_{0}', F')$ to recognize $Zero^{+}(A)$:
+\begin{enumerate}
+\item $Q' = Q$
+\item $q_{0}' = q_{0}$
+\item $F' = F$
+\item Define $\delta'(q, a)$ so that for any $q \in Q'$ and any $a \in \Sigma$:
+\begin{center}
+$\displaystyle \delta'( q,\ a) \ =\begin{cases}
+\{ \delta( q,\ a) \} & a \neq 0 \\
+\{ \delta( q,\ a), \; q \} & a = 0 \\
+\end{cases} \ \ $
+\end{center}
+\end{enumerate}
 \end{proof}
 
 \end{document}
