@@ -107,7 +107,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="y77KDg8ClLF4qjjTYf4D" name="P1.xx">
-    <mxGraphModel dx="2760" dy="1686" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1624" dy="992" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3059,6 +3059,26 @@
         <mxCell id="GVVOKtNGnDmKnDbpNCV5-53" value="&lt;span style=&quot;font-style: normal;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;(b)&lt;/font&gt;&lt;/span&gt;" style="text;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;textShadow=0;html=1;fontStyle=2" vertex="1" parent="GVVOKtNGnDmKnDbpNCV5-1">
           <mxGeometry x="548.75" y="310" width="20" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="S1VdzFhYtqcHsYSY77Db-6" value="Problem 1.46" style="swimlane;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="10" width="252.5" height="140" as="geometry">
+            <mxRectangle x="10" y="10" width="90" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="S1VdzFhYtqcHsYSY77Db-1" value="1......1001......10" style="text;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;textShadow=0;html=1;fontStyle=0" vertex="1" parent="S1VdzFhYtqcHsYSY77Db-6">
+          <mxGeometry x="39.5" y="46" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="S1VdzFhYtqcHsYSY77Db-2" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;direction=north;" vertex="1" parent="S1VdzFhYtqcHsYSY77Db-6">
+          <mxGeometry x="47.5" y="67" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="S1VdzFhYtqcHsYSY77Db-3" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;direction=north;" vertex="1" parent="S1VdzFhYtqcHsYSY77Db-6">
+          <mxGeometry x="140.5" y="67" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="S1VdzFhYtqcHsYSY77Db-4" value="more than&lt;div&gt;&lt;i&gt;p&lt;/i&gt; 1s&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="S1VdzFhYtqcHsYSY77Db-6">
+          <mxGeometry x="32.5" y="90" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="S1VdzFhYtqcHsYSY77Db-5" value="&lt;i&gt;p&lt;/i&gt; 1s" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="S1VdzFhYtqcHsYSY77Db-6">
+          <mxGeometry x="156" y="90" width="29" height="11" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
@@ -4705,7 +4725,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="HSCjjg6loYh9aO_a9TQh" name="Problem">
-    <mxGraphModel dx="1380" dy="843" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="552" dy="337" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
