@@ -58,6 +58,13 @@ $\{wtw \ | \ w, \ t \in \{0,1\}^{+}\}$
 \end{problem}
 
 \begin{proof}
+The proof is by contradiction. Assume $A$ is a regular language. Let $p$ be the pumping length give by the pumping lemma. Choose $w = 1^{p}0$ and $t=0$, so the string $s$ is:
+\[ s = 1^{p}001^{p}0 \]
+The string $s$ is a member of $A$, $|s| \geq p$, therefore the pumping lemma guarantees that the string $s$ can be split into three pieces, $s=xyz$, where for any $i \geq 0$ the string $xy^{i}z \in A$. According to the condition 3 of the pumping lemma, $y$ can only contain 1s. More specfically, $y$ can contain any number of 1s from 1 to $p$. Also, it must be the case that $w$ starts with 1 and ends with a 0. When $i > p$, there are more 1s at the start of $s$ then the number of 1s before the last 0, so there is no way to pick a $w$. Therefore, $xy^{p+1}z \notin A$, which is a contradiction.
+\begin{center}
+\includegraphics[scale=2.0]{Figures/Problem1.46.pdf} \\
+When $i > p$, there are more 1s at the start of $s$.
+\end{center}
 \end{proof}
 
 \end{document}
