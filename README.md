@@ -1,5 +1,4 @@
 # Theoretical Computer Science
 
-Here... I document all of my work (notes, assignments, proofs etc.) related to Theoretical Computer Science.
+Here... I document all of my work related to Theoretical Computer Science. You are free to use the material I share in this repository without my explicit permission.
 
-Please feel free to contact me if you find any bugs or errors. 
