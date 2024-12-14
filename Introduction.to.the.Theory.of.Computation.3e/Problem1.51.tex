@@ -56,13 +56,24 @@ Let $x$ and $y$ be strings and let $L$ be any language. Then $x \equiv_{L} y$ is
 \end{theorem}
 
 \begin{problem}[Part]{1}
-Reflexivity: $x \equiv_{L} y$
+Reflexivity: $x \equiv_{L} x$
 \end{problem}
+\begin{align*}
+&\quad x \equiv_{L} x \\
+= &\quad \langle Definition \ of \ \equiv_{L} \rangle \\
+&\quad (\forall z \ |: xz \in L \equiv xz \in L) \\
+= &\quad \langle Reflexivity \ of \equiv (3.5) \rangle \\
+&\quad (\forall z \ |: true) \\
+= &\quad \langle (9.8) \rangle \\
+&\quad true
+\end{align*}
+
+\newpage
 
 \begin{problem}[Part]{2}
 Symmetry: $x \equiv_{L} y \Rightarrow y \equiv_{L} x$
 \end{problem}
-Proof by assuming conjuncts of the antecedents.
+Proof by assuming conjuncts of the antecedent.
 \begin{align*}
 &\quad y \equiv_{L} x \\
 = &\quad \langle Definition \ of \ \equiv_{L} \rangle \\
@@ -79,7 +90,7 @@ Proof by assuming conjuncts of the antecedents.
 Transitivity: $x \equiv_{L} y \wedge y \equiv_{L} w \Rightarrow x \equiv_{L} w$
 \end{problem}
 \begin{align*}
-&\quad x \equiv_{L} y \wedge y \equiv_{L} w \\
+L \cdot H  \cdot S: &\quad x \equiv_{L} y \wedge y \equiv_{L} w \\
 = &\quad \langle Definition \ of \ \equiv_{L} \rangle \\
 &\quad (\forall z \ |: xz \in L \equiv yz \in L) \wedge (\forall z \ |: yz \in L \equiv wz \in L) \\
 = &\quad \langle Distributivity \ (8.15) \rangle \\
