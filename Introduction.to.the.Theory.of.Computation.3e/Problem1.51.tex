@@ -78,5 +78,18 @@ Proof by assuming conjuncts of the antecedents.
 \begin{problem}[Part]{3}
 Transitivity: $x \equiv_{L} y \wedge y \equiv_{L} w \Rightarrow x \equiv_{L} w$
 \end{problem}
+\begin{align*}
+&\quad x \equiv_{L} y \wedge y \equiv_{L} w \\
+= &\quad \langle Definition \ of \ \equiv_{L} \rangle \\
+&\quad (\forall z \ |: xz \in L \equiv yz \in L) \wedge (\forall z \ |: yz \in L \equiv wz \in L) \\
+= &\quad \langle Distributivity \ (8.15) \rangle \\
+&\quad (\forall z \ |: xz \in L \equiv yz \in L \wedge yz \in L \equiv wz \in L) \\
+= &\quad \langle Leibniz \ (3.84 a) \rangle \\
+&\quad (\forall z \ |: xz \in L \equiv wz \in L \wedge yz \in L \equiv wz \in L) \\
+\Rightarrow &\quad \langle Body \ weakening/strengthening \ (9.11) \rangle \\
+&\quad (\forall z \ |: xz \in L \equiv wz \in L) \\
+= &\quad \langle Definition \ of \ \equiv_{L} \rangle \\
+&\quad x \equiv_{L} w
+\end{align*}
 \end{proof}
 \end{document}
