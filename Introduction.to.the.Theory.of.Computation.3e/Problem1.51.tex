@@ -42,13 +42,13 @@ Let $x$ and $y$ be strings and let $L$ be any language. We say that $x$ and $y$ 
 
 \begin{proof}
 To show that $\equiv_{L}$ is an equivalence relation, first give formal definition of $\equiv_{L}$\footnote{The formal method used in this proof is presented in the book \textbf{A Logical Approach
-to Discrete Math} by David Gries and Fred B. Schneider. I recommend the course \textbf{Math 220: Formal Methods, Pepperdine University} to any who wishes to learn more about this method. Course link is https://cslab.pepperdine.edu/warford/math220/.}, and then show that $\equiv_{L}$ is:
+to Discrete Math} by David Gries and Fred B. Schneider. To learn more about this method, checkout \textbf{Math 220: Formal Methods, Pepperdine University}. Course link is https://cslab.pepperdine.edu/warford/math220/.}, and then show that $\equiv_{L}$ is:
 \begin{enumerate}
 \item Reflexive
 \item Symmetric
 \item Tranisitive
 \end{enumerate}
-\begin{theorem}[Definition]{1} 
+\begin{theorem}[Definition]{$\equiv_{L}$} 
 Let $x$ and $y$ be strings and let $L$ be any language. Then $x \equiv_{L} y$ is defined as
 \[
 (x \equiv_{L} y) \equiv (\forall z \ |: xz \in L \equiv yz \in L).
@@ -62,6 +62,18 @@ Reflexivity: $x \equiv_{L} y$
 \begin{problem}[Part]{2}
 Symmetry: $x \equiv_{L} y \Rightarrow y \equiv_{L} x$
 \end{problem}
+Proof by assuming conjuncts of the antecedents.
+\begin{align*}
+&\quad y \equiv_{L} x \\
+= &\quad \langle Definition \ of \ \equiv_{L} \rangle \\
+&\quad (\forall z \ |: yz \in L \equiv xz \in L) \\
+= &\quad \langle Symmetry \ of \equiv (3.2) \rangle \\
+&\quad (\forall z \ |: xz \in L \equiv yz \in L) \\
+= &\quad \langle Definition \ of \ \equiv_{L} \rangle \\
+&\quad x \equiv_{L} y \\
+= &\quad \langle Assumption \ x \equiv_{L} y \rangle \\
+&\quad true
+\end{align*}
 
 \begin{problem}[Part]{3}
 Transitivity: $x \equiv_{L} y \wedge y \equiv_{L} w \Rightarrow x \equiv_{L} w$
