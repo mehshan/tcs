@@ -8,3 +8,8 @@
 1. 
 1. 
 
+## To Do List
+
+- [ ] Problem 1.43 proof by construction.
+- [ ] Problem 1.51 part 3 - Same dummy variable (z) used twice in application of the definition. Better use different variables and then show that dummy renaming is possible..?
+
