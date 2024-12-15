@@ -10,7 +10,9 @@
 
 ## To Do List
 
-- [ ] Chapter name is misspelled.
-- [ ] Problem 1.43 proof by construction.
+- [ ] Chapter name is misspelled
+- [ ] Problem 1.38 - redo the all-NFA proof
+- [ ] Problem 1.43 - proof by construction
+- [ ] Problem 1.45 - typeset
 - [ ] Problem 1.51 part 3 - Same dummy variable (z) used twice in application of the definition. Better use different variables and then show that dummy renaming is possible..?
 

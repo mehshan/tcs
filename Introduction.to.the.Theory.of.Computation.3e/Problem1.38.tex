@@ -12,7 +12,7 @@
 \thispagestyle{plain}
 
 \newcommand{\myname}{Mehshan Mustafa}
-\newcommand{\dated}{\today}
+\newcommand{\dated}{December 3, 2024} % \today
 
 \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
@@ -32,25 +32,14 @@
 \begin{document}
 \textbf{Introduction to the Theory of
 Computation}\hfill\textbf{\myname}\\[0.01in]
-\textbf{Chapter 1: Reqular Languages}\hfill\textbf{\dated}\\
+\textbf{Chapter 1: Regular Languages}\hfill\textbf{\dated}\\
 \smallskip\hrule\bigskip
 
 \begin{problem}{1.38}
-An all-NFA $M$ is a 5-tuple $(Q, \Sigma, \delta, q_{0}, F)$ that accepts $x \in \Sigma^{*}$ if every posible state that $M$ could be in after reading input $x$ is a state from $F$. Note, in contrast, that an ordinary NFA accepts a string if some state among these possible states is an accept state. Prove that all-NFAs recognize the class of regular languages.
+An all-NFA $M$ is a 5-tuple $(Q, \Sigma, \delta, q_{0}, F)$ that accepts $x \in \Sigma^{*}$ if every possible state that $M$ could be in after reading input $x$ is a state from $F$. Note, in contrast, that an ordinary NFA accepts a string if some state among these possible states is an accept state. Prove that all-NFAs recognize the class of regular languages.
 \end{problem}
 
 \begin{proof}
-The proof is in two parts. In the first part, show that for any regular language $A$ and an NFA $N$ that recognizes it, there exists an all-NFA $M$ that reocognizes the complement of $A$. In the second part, use the result of the first part to show that for every regular language there exists an all-NFA that recognizes it.
-\\
-\\
-\textbf{Part 1.} Let $A$ be any regular language, and let $N$ be an NFA that recognizes A. Use the construction give in the Theorem 1.39 to construct an equivalent DFA $D$ for $N$ that also recognizes $A$. Swap the accept and non-accept states of $D$ to get a new DFA $D'$ that accepts the complement of $A$\footnote{Exercise 1.14 a.}.
-\\
-\\
-Let $D' = (Q', \Sigma, \delta', q_{0}', F')$. Construct the all-NFA $M = (Q, \Sigma, \delta, q_{0}, F)$ by reversing the construction of the Theorem 1.39.
-\begin{enumerate}
-\item $Q = Q'$
-\item $q_{0} = \{q_{0}'\}$
-\end{enumerate}
-\textbf{Part 2.}
+To Do
 \end{proof}
 \end{document}
