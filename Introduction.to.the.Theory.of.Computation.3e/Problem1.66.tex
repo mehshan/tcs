@@ -81,4 +81,11 @@ Show, by giving an example, that the class of non-regular languages is not
 closed under homomorphism.
 \end{problem}
 
+Take $A = \{0^{n}1^{n}2^{n} \ | \ n \geq 0 \}$ for example, which is a non-regular language\footnote{Exercise 1.29 a.}. Let $\Gamma = \{x, y\}$, and define homomorphism $f(a) = x$, for all $a \in \{0, 1, 2\}$. Then, $f(A) = \{ \epsilon, x^{3}, x^{6}, x^{9}, x^{12}, \cdots, x^{3n}\}$ is a regular language that consists of only those strings, which have multiple of 3 $x's$.
+
+\begin{center}
+\includegraphics[scale=1.0]{Figures/Problem1.66c.pdf} \\
+A finite automaton that recognizes $f(A)$.
+\end{center}
+
 \end{document}
