@@ -17,8 +17,7 @@
 - [ ] Problem 1.49 - part (a) requires more work and typeset
 - [ ] Problem 1.51 - part (3) same dummy variable (z) is used twice in application of the definition, better use different variables and then show that dummy renaming is possible..?
 - [ ] Problem 1.56
-- [ ] Problem 1.57 - write formal proof from proof idea and typeset
-- [ ] Problem 1.58 - write formal proof from proof idea and typeset
+
 - [ ] Problem 1.59
 - [ ] Problem 1.60 - typeset
 - [ ] Problem 1.61 - typeset
@@ -32,8 +31,11 @@
 
 ### In Progress
 
-- [ ] Problem 1.67 - clean up proof and typeset
+- [ ] Problem 1.57 - write formal proof from proof idea and typeset
+- [ ] Problem 1.58 - write formal proof from proof idea and typeset
 
 ### Done ✓
 
 - [x] Problem 1.66 part (b) - example
+- [x] Problem 1.67 - clean up proof and typeset
+
