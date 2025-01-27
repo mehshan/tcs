@@ -7,6 +7,7 @@
 \thispagestyle{plain}
 
 \newcommand{\dated}{\today}
+\newcommand{\token}[1]{\langle \text{#1} \rangle}
 
 \begin{document}
 
@@ -34,8 +35,18 @@ Two different parse trees of the string \\
 ``if condition then if condition then a:=1 else a:=1".
 \end{center}
 
+\newpage 
+
 \begin{problem}[Part]{b}
 Give a new unambiguous grammar for the same language.
 \end{problem}
+\begin{align*}
+\token{STMT} &\rightarrow \token{ASSIGN} \ | \ \token{IF-THEN} \\
+\token{IF-THEN} &\rightarrow \text{if condition then} \ \token{IF-BODY} \\
+\token{IF-BODY} &\rightarrow \token{ASSIGN} \ | \ \token{IF-THEN} \ | \ \token{ASSIGN} \ \token{ELSE} \\
+\token{ELSE} &\rightarrow \text{else} \ \token{ELSE-BODY} \\
+\token{ELSE-BODY} &\rightarrow \token{ASSIGN} \ | \ \token{IF-THEN} \\
+\token{ASSIGN} &\rightarrow \text{a:=1} \\
+\end{align*}
 
 \end{document}
