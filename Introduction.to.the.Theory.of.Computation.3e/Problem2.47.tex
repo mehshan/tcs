@@ -32,8 +32,9 @@ A PDA that recognizes $B$.
 \begin{problem}[Part]{b}
 Give a CFG that generates $B$.
 \end{problem}
-
-\begin{proof}
-\end{proof}
+\begin{align*}
+S &\rightarrow 0S0 \ | \ 1S0 \ | \ 0T1 \ | \ 1T1 \\
+T &\rightarrow 0T0 \ | \ 0T1 \ | \ 1T0 \ | \ 1T1 \ | \ 0 \ | \ 1 \ | \ \varepsilon \\
+\end{align*}
 
 \end{document}
