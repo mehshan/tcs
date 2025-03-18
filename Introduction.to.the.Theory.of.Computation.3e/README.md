@@ -2,13 +2,7 @@
 
 ## Solutions to Problems
 
-### Notes on Solving Finite Automata Problems
-
-1. TODO
-1. TODO
-1. TODO
-
-## To Do
+### To Do
 
 - [ ] Chapter name is misspelled
 - [ ] Problem 1.38 - redo the proof (all-NFA)
