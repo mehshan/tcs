@@ -54,4 +54,12 @@ T &\rightarrow aTb \ | \ ab
 Sketch a proof that $H$ is unambiguous.
 \end{problem}
 
+\begin{proof}
+All strings that contain two or more segments of $a \cdots b$, have the same parse tree structure in $H$ as shown in the following diagram. As the number of $a \cdots b$ segments grows, the corresponding parse tree grows only to the left. If a string has $n$ segments of $a \cdots b$, where $n \geq 2$, then the $S \rightarrow ST$ rule is applied $n-1$ times to generate the $n$ number of $T's$ required to generate the string. As this is the only way to generate strings containing two or segments of $a \cdots b$, therefore $H$ is unambiguous.
+\begin{center}
+\includegraphics[scale=0.8]{Figures/Problem2.46b.pdf} \\
+Structure of parse trees in $H$.
+\end{center}
+\end{proof}
+
 \end{document}
