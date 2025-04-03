@@ -5,31 +5,54 @@
 ### To Do
 
 - [ ] Chapter name is misspelled
-- [ ] Problem 1.38 - redo the proof (all-NFA)
-- [ ] Problem 1.43 - proof by construction
-- [ ] Problem 1.45 - revise and typeset (A/B)
-- [ ] Problem 1.49 - part (a) requires more work and typeset
-- [ ] Problem 1.51 - part (3) same dummy variable (z) is used twice in application of the definition, better use different variables and then show that dummy renaming is possible..?
-- [ ] Problem 1.56
-
-- [ ] Problem 1.59
-- [ ] Problem 1.60 - typeset
-- [ ] Problem 1.61 - typeset
-- [ ] Problem 1.62 - write formal proof from proof idea and typeset
-- [ ] Problem 1.63 - write formal proof from proof idea and typeset
-- [ ] Problem 1.64
-- [ ] Problem 1.65 - part (b)
-- [ ] Problem 1.66 - part (a) proof by construction
-- [ ] Problem 1.68 - part (b)
-- [ ] Problem 1.69
+- [ ] 1.38 - redo the proof (all-NFA)
+- [ ] 1.43 - proof by construction
+- [ ] 1.45 - revise and typeset (A/B)
+- [ ] 1.49 - part (a) requires more work and typeset
+- [ ] 1.51 - part (3) same dummy variable (z) is used twice in application of the definition, better use different variables and then show that dummy renaming is possible..?
+- [ ] 1.56
+- [ ] 1.59
+- [ ] 1.60 - typeset
+- [ ] 1.61 - typeset
+- [ ] 1.62 - write formal proof from proof idea and typeset
+- [ ] 1.63 - write formal proof from proof idea and typeset
+- [ ] 1.64
+- [ ] 1.65 - part (b)
+- [ ] 1.66 - part (a) proof by construction
+- [ ] 1.68 - part (b)
+- [ ] 1.69
+- [ ] 2.19
+- [ ] 2.20
+- [ ] 2.21 - prove grammar is correct
+- [ ] 2.23
+- [ ] 2.25
+- [ ] 2.26 - typeset
+- [ ] 2.28 - typeset parts (a) & (c)
+- [ ] 2.29
+- [ ] 2.30 - typeset part (c)
+- [ ] 2.31 - typeset
+- [ ] 2.32 - typeset
+- [ ] 2.33 - typeset
+- [ ] 2.34 - typeset
+- [ ] 2.35
+- [ ] 2.37
+- [ ] 2.40 - typeset
+- [ ] 2.41
+- [ ] 2.42
+- [ ] 2.43 - typeset part (a)
+- [ ] 2.43 - part (b)
+- [ ] 2.45 - review
+- [ ] 2.48
+- [ ] 2.49
+- [ ] 2.50
 
 ### In Progress
 
-- [ ] Problem 1.57 - write formal proof from proof idea and typeset
-- [ ] Problem 1.58 - write formal proof from proof idea and typeset
+- [ ] 1.57 - write formal proof from proof idea and typeset
+- [ ] 1.58 - write formal proof from proof idea and typeset
 
 ### Done ✓
 
-- [x] Problem 1.66 part (b) - example
-- [x] Problem 1.67 - clean up proof and typeset
+- [x] 1.66 part (b) - example
+- [x] 1.67 - clean up proof and typeset
 
