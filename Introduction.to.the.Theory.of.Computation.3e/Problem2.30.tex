@@ -34,11 +34,18 @@ The proof is by contradiction. Assume the language $A = \{0^{n}1^{n}0^{n}1^{n} \
 One of these cases must occur, and both cases result in a contradiction.
 \end{proof}
 
-\begin{problem}[Part]{b}
+\begin{problem}[Part]{d}
 $\{ t_{1} \# t_{2} \# \cdots \# t_{k} \ | \ k \geq 2, \ each \ t_{i} \in \{a, b\}^{*}, \ and \ t_{i} = t_{j} \ for \ some \ i \neq  j \}$
 \end{problem}
 
 \begin{proof}
+The proof is by contradiction. Assume the language $B = \{ t_{1} \# t_{2} \# \cdots \# t_{k} \ | \ k \geq 2, \ each \ t_{i} \in \{a, b\}^{*}, \ and \ t_{i} = t_{j} \ for \ some \ i \neq  j \}$ is context free. Let $p$ be the pumping length given by the pumping lemma. Choose the string $s = a^pb^p\#a^pb^p$. Clearly $s$ is a member of $B$ and of length at least $p$. The pumping lemma states that $s$ can be pumped, but we show that it cannot be pumped.
+
+\begin{enumerate}
+\item Either $v$ or $y$ contains the $\#$. The string $uv^0xy^0z \notin B$, because it does not contain any $\#'s$.
+\item Neither $v$ nor $y$ contains the $\#$. There are two cases. First, both $v$ and $y$ are on the same side of the $\#$. Second, $v$ contains any number of b's on the left of $\#$, while $y$ contains any number of a's on the right. In both cases, the string $uv^2xy^2z \notin B$ as $t_1 \neq t_2$. 
+\end{enumerate}
+One of these cases must occur, and both cases result in a contradiction.
 \end{proof}
 
 \end{document}

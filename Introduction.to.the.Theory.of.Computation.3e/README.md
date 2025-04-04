@@ -29,8 +29,6 @@
 - [ ] 2.26 - typeset
 - [ ] 2.28 - typeset parts (a) & (c)
 - [ ] 2.29
-- [ ] 2.30 - typeset part (c)
-- [ ] 2.31 - typeset
 - [ ] 2.32 - typeset
 - [ ] 2.33 - typeset
 - [ ] 2.34 - typeset
@@ -50,9 +48,4 @@
 
 - [ ] 1.57 - write formal proof from proof idea and typeset
 - [ ] 1.58 - write formal proof from proof idea and typeset
-
-### Done ✓
-
-- [x] 1.66 part (b) - example
-- [x] 1.67 - clean up proof and typeset
 
