@@ -31,7 +31,7 @@ A $2$-PDA can simulate any $1$-PDA by using only one of it's stacks. Therefore, 
 \item Once a $b$ is read, match it with an $a$ by popping an $a$ from the first stack. Keep reading and matching any subsequent $b$'s. Reject if the number of $a$'s and $b$'s are not equal.
 \item Next, match $c$'s with $a$'s on the second stack. Accept if the number of $a$'s and $c$'s are equal, reject otherwise.
 \item In above steps, also make sure the input string is in $a^*b^*c^*$.
-\end{enumerate} 
+\end{enumerate}
 \end{proof}
 
 \begin{problem}[Part]{b}
@@ -39,7 +39,21 @@ Show that $3$-PDAs are not more powerful than $2$-PDAs.
 \end{problem}
 
 \begin{proof}
-
+To show that $3$-PDAs are not more powerful than $2$-PDAs, we show how two stacks can be used to simulate a Turing machine tape.
+\begin{enumerate}
+\item Place the two stacks horizontally next to each other. The stack on the right grows to the right, whereas the stack on the left grows to the left.
+\item Mark the end of stacks by pushing $\$$ on both stacks. For now, assume that the input symbols are available on the RHS stack, followed by the $\$$ symbol. Later we show how to load input string on the RHS stack.
+\item The read/write head is always at the top of the RHS stack.
+\item To read, pop from the RHS stack, and to write, push on the RHS stack.
+\item To move right, pop a symbol from the RHS stack and push it to the LHS stack.
+\item To move left, pop a symbol from the LHS stack and push it to the RHS stack.
+\item While reading, if $\$$ is popped from the RHS, then this indicates the end of the tape. In this case, the input symbol is assumed to be the blank and the $\$$ is pushed back on the RHS stack. The written symbol is pushed on the LHS stack. 
+\item While reading, if $\#$ is popped from the RHS, the this indicates that the head is at the left most position of the tape. In this case, push the $\#$ back on the LHS stack and read again.
+\end{enumerate}
+\begin{center}
+\includegraphics[scale=1.0]{Figures/Problem3.9.pdf} \\
+Configuration of the two stacks. The RHS stack grows to the right, and the LHS stack grows to the left.
+\end{center}
 \end{proof}
 
 \end{document}
