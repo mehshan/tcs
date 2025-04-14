@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+
+\input{Shared.tex}
+
+\parindent0in
+\pagestyle{plain}
+\thispagestyle{plain}
+
+\newcommand{\dated}{\today}
+\newcommand{\token}[1]{\langle \text{#1} \rangle}
+
+\begin{document}
+
+\textbf{Introduction to the Theory of
+Computation}\hfill\textbf{\myname}\\[0.01in]
+\textbf{Chapter 3: The Church-Turing Thesis}\hfill\textbf{\dated}\\
+\smallskip\hrule\bigskip
+
+\begin{problem}{3.9}
+Let a $k$-PDA be a pushdown automaton that has $k$ stacks. Thus a $0$-PDA is an NFA and a $1$-PDA is a conventional PDA. You already know that $1$-PDAs are more powerful (recognize a larger class of languages) than $0$-PDAs.
+\end{problem}
+
+\begin{problem}[Part]{a}
+Show that $2$-PDAs are more powerful than $1$-PDAs.
+\end{problem}
+
+\begin{proof}
+A $2$-PDA can simulate any $1$-PDA by using only one of it's stacks. Therefore, $2$-PDAs can recognize all the languages that are recognized by $1$-PDAs. Additionally, we show that $2$-PDAs can also recognize more languages, which are not recognized by $1$-PDAs. For example, the language $A = \{a^nb^nc^n \ | \ n \geq 0 \}$. The language $A$ is not a context free language\footnote{Example 2.36, Chapter 2.}, but we can construct a $2$-PDA to recognize $A$ as follows:
+\begin{enumerate}
+\item Read and push $a$'s on both stacks until a $b$ is read.
+\item Once a $b$ is read, match it with an $a$ by popping an $a$ from the first stack. Keep reading and matching any subsequent $b$'s. Reject if the number of $a$'s and $b$'s are not equal.
+\item Next, match $c$'s with $a$'s on the second stack. Accept if the number of $a$'s and $c$'s are equal, reject otherwise.
+\item In above steps, also make sure the input string is in $a^*b^*c^*$.
+\end{enumerate} 
+\end{proof}
+
+\begin{problem}[Part]{b}
+Show that $3$-PDAs are not more powerful than $2$-PDAs.
+\end{problem}
+
+\begin{proof}
+
+\end{proof}
+
+\end{document}
