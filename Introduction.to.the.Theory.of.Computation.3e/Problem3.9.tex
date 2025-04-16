@@ -41,19 +41,41 @@ Show that $3$-PDAs are not more powerful than $2$-PDAs.
 \begin{proof}
 To show that $3$-PDAs are not more powerful than $2$-PDAs, we show how two stacks can be used to simulate a Turing machine tape.
 \begin{enumerate}
-\item Place the two stacks horizontally next to each other. The stack on the right grows to the right, whereas the stack on the left grows to the left.
-\item Mark the end of stacks by pushing $\$$ on both stacks. For now, assume that the input symbols are available on the RHS stack, followed by the $\$$ symbol. Later we show how to load input string on the RHS stack.
-\item The read/write head is always at the top of the RHS stack.
-\item To read, pop from the RHS stack, and to write, push on the RHS stack.
+\item Consider an arrangement of the two stacks, where the two stacks are placed horizontally next to each other. The right hand side (RHS) stack grows to the right, whereas the left hand side (LHS) stack grows to the left.
+\item Mark the end of stacks by pushing special symbols before any input is processed. Let $\pi$ and $\lambda$ be two distinct symbols, which are not part of the input language:
+\begin{enumerate}
+\item Push $\pi$ on the LHS stack.
+\item Push $\lambda$ on the RHS stack.
+\end{enumerate}
+\item The read/write head is always at the top of the RHS stack. For now, assume that the input symbols are available on the RHS stack. Later we show how to load input string on the RHS stack.
+\begin{enumerate}
+\item To read, pop from the RHS stack.
+\item To write, push on the RHS stack.
+\end{enumerate}
+\item Move left and right are simulated by push and pop operations on the two stacks:
+\begin{enumerate}
 \item To move right, pop a symbol from the RHS stack and push it to the LHS stack.
 \item To move left, pop a symbol from the LHS stack and push it to the RHS stack.
-\item While reading, if $\$$ is popped from the RHS, then this indicates the end of the tape. In this case, the input symbol is assumed to be the blank and the $\$$ is pushed back on the RHS stack. The written symbol is pushed on the LHS stack. 
-\item While reading, if $\#$ is popped from the RHS, the this indicates that the head is at the left most position of the tape. In this case, push the $\#$ back on the LHS stack and read again.
 \end{enumerate}
+\item Special cases for the left-most and right-most end of the tape:
+\begin{enumerate}
+\item If $\pi$ is popped from the RHS, then this indicates that the head is at the left-most position of the tape. In this case, push $\pi$ back on the LHS stack and read again.
+\item If $\lambda$ is popped from the RHS, then this indicates that the head is at the right-most position of the tap. To simulate infinite tape on the right, in this case the input symbol is assumed to be the blank and the $\lambda$ is pushed back on the RHS stack. The written symbol is pushed on the LHS stack. 
+\end{enumerate}
+\end{enumerate}
+
 \begin{center}
 \includegraphics[scale=1.0]{Figures/Problem3.9.pdf} \\
-Configuration of the two stacks. The RHS stack grows to the right, and the LHS stack grows to the left.
+Configuration of the two stacks. RHS stack grows to the right, \\ and the LHS stack grows to the left. The ends of LHS and RHS \\ stacks are marked by the symbols $\pi$ and $\lambda$ respectively.
 \end{center}
+
+Load input string on the RHS stack as follows:
+\begin{enumerate}
+\item Push $\pi$ on the LHS stack, and $\lambda$ on the RHS stack to mark their ends.
+\item Repeatedly, read a symbol from the input, push it on the LHS stack and non-deterministically go to step 3.
+\item Pop symbols from LHS stack and push them on the RHS stack. Once the LHS stack is emptied, non-deterministically go to step 4.
+\item Process the input string on the RHS stack as discussed earlier.
+\end{enumerate}
 \end{proof}
 
 \end{document}
