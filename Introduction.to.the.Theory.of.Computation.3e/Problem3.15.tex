@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+
+\input{Shared.tex}
+
+\parindent0in
+\pagestyle{plain}
+\thispagestyle{plain}
+
+
+\usepackage{csquotes}
+
+\newcommand{\dated}{\today}
+\newcommand{\token}[1]{\langle \text{#1} \rangle}
+
+\begin{document}
+
+\textbf{Introduction to the Theory of
+Computation}\hfill\textbf{\myname}\\[0.01in]
+\textbf{Chapter 3: The Church-Turing Thesis}\hfill\textbf{\dated}\\
+\smallskip\hrule\bigskip
+
+\begin{problem}{3.15}
+Show that the collection of decidable languages is closed under the operation of.
+\end{problem}
+
+\begin{problem}[Part]{b}
+concatenation.
+\end{problem}
+
+\begin{proof}
+\end{proof}
+
+\begin{problem}[Part]{c}
+star.
+\end{problem}
+
+\begin{proof}
+\end{proof}
+
+\begin{problem}[Part]{d}
+complementation.
+\end{problem}
+
+For any decidable language $L$, let $M$ be the \textbf{TM} that decides it. Construct a \textbf{TM} $M^{'}$ that decides the complement of $L$:
+\\
+\\
+\textquotedblleft On input $w$:
+\begin{enumerate}
+\item Run $M$ on $w$. If it accepts, \textit{reject}. Otherwise, \textit{accept}.\textquotedblright
+\end{enumerate}
+
+\begin{problem}[Part]{e}
+intersection.
+\end{problem}
+
+For any two decidable languages $L_1$ and $L_2$, let $M_1$ and $M_2$ be the \textbf{TM}s that decide them. We construct a \textbf{TM} $M^{'}$ that decides the intersection of $L_1$ and $L_2$:
+\\
+\\
+\textquotedblleft On input $w$:
+\begin{enumerate}
+\item Run $M_1$ on $w$. If it rejects, \textit{reject}.
+\item Run $M_2$ on $w$. If it accepts, \textit{accept}. Otherwise, \textit{reject}.\textquotedblright
+\end{enumerate}
+
+\end{document}
