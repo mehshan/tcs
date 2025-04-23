@@ -41,6 +41,18 @@ For any two decidable languages $L_1$ and $L_2$, let $M_1$ and $M_2$ be the \tex
 star.
 \end{problem}
 
+For any decidable language $L$, let $M$ be the \textbf{TM} that decides it.
+
+For any non-empty string $w = w_1w_2w_3 \cdots w_n$, define partition $P = (p_1, \  p_2, \ \cdots , \ p_k)$, where $1 \leq k \leq n$, each $p_i \in \Sigma^{*}$, and $w = p_1  p_2 \cdots p_k$. We construct a \textbf{TM} $M^{'}$ that decides $L^{*}$: \\
+\\
+\textquotedblleft On input $w$:
+\begin{enumerate}
+\item If $w = \varepsilon$, \textit{accept}.
+\item For non-empty $w$, generate list of all possible partitions $P_1, \ P_2, \ P_3, \cdots$.
+\item Repeat the following for each $i = 1, 2, 3, \cdots$.
+\item \hspace*{0.5cm} Run $M$ on each $p \in P_i$.
+\item \hspace*{0.5cm} If in any computation, $M$ accepts all $p \in P_i$, \textit{accept}.\textquotedblright
+\end{enumerate}
 
 \begin{problem}[Part]{d}
 complementation.
