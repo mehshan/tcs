@@ -27,22 +27,26 @@ Show that the collection of decidable languages is closed under the operation of
 concatenation.
 \end{problem}
 
-\begin{proof}
-\end{proof}
+For any two decidable languages $L_1$ and $L_2$, let $M_1$ and $M_2$ be the \textbf{TM}s that decide them. For a string $w = w_1w_2w_3 \cdots w_n$, define split $W = (P, \ S)$, where $P, S \in \Sigma^*$, and $w = PS$. In other words, the strings $P$ and $S$ are prefix and suffix of $w$, such that their concatenation is equivalent to $w$. We construct a \textbf{TM} $M^{'}$ that decides the concatenation of $L_1$ and $L_2$: \\
+\\
+\textquotedblleft On input $w$:
+\begin{enumerate}
+\item Calculate the list of all possible splits $W_1 = (P_1, S_1), W_2 = (P_2, S_2), \cdots W_n = (P_n, S_n)$ of $w$.
+\item Repeat the following for each $i = 1, 2, 3, \cdots$.
+\item \hspace*{0.5cm} Run $M_1$ on $P_i$, and $M_2$ on $S_i$.
+\item \hspace*{0.5cm} If in any computation, both $M_1$ and $M_2$ accept, \textit{accept}. \textquotedblright
+\end{enumerate}
 
 \begin{problem}[Part]{c}
 star.
 \end{problem}
 
-\begin{proof}
-\end{proof}
 
 \begin{problem}[Part]{d}
 complementation.
 \end{problem}
 
-For any decidable language $L$, let $M$ be the \textbf{TM} that decides it. Construct a \textbf{TM} $M^{'}$ that decides the complement of $L$:
-\\
+For any decidable language $L$, let $M$ be the \textbf{TM} that decides it. Construct a \textbf{TM} $M^{'}$ that decides the complement of $L$: \\
 \\
 \textquotedblleft On input $w$:
 \begin{enumerate}
@@ -53,8 +57,7 @@ For any decidable language $L$, let $M$ be the \textbf{TM} that decides it. Cons
 intersection.
 \end{problem}
 
-For any two decidable languages $L_1$ and $L_2$, let $M_1$ and $M_2$ be the \textbf{TM}s that decide them. We construct a \textbf{TM} $M^{'}$ that decides the intersection of $L_1$ and $L_2$:
-\\
+For any two decidable languages $L_1$ and $L_2$, let $M_1$ and $M_2$ be the \textbf{TM}s that decide them. We construct a \textbf{TM} $M^{'}$ that decides the intersection of $L_1$ and $L_2$: \\
 \\
 \textquotedblleft On input $w$:
 \begin{enumerate}
