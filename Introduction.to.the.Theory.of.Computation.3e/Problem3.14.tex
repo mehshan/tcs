@@ -29,28 +29,31 @@ First we show how a Turing machine can simulate any queue automaton.
 \item To push a symbol, write the symbol on the first blank cell on the queue tape.
 \item To pull, find the first uncrossed symbol on the queue tape. Read the symbol and mark it as crossed. If there is no such symbol, then it means that the queue is empty.
 \end{enumerate}
-Next, we show how a queue automaton can simulate Turing machines. The queue is used to simulate Turing machine tape, and move left and right operations.  At the start, load the queue with input string. Two special symbols are used.
+Next, we show how a queue automaton can simulate Turing machines. The queue is used to simulate Turing machine tape, and the move left and right operations. At the start, load the queue with input string. Two special symbols are used.
 \begin{enumerate}
-\item Blank symbol $\sqcup$ is used to mark the end of the input string. The blank symbol is also used to simulate infinite tape.
+\item Hash symbol $\#$ is used to mark the end of the input string. It is also used to mark the beginning of infinite tape.
 \item Dollar symbol $\$$ marks the end of the queue.
 \end{enumerate}
 
-The read/write head is fixed. The head always reads from the top of the queue. The contents of the queue are rearranged to simulate right and left movements of the head. The contents of the tape, which are on the left side of the head are stored between the $\sqcup$ and $\$$ as a stack. The symbol immediately to the left of the current head position is at the top of the stack.
+The read/write head is fixed. The head always reads from the top of the queue. The contents of the queue are rearranged to simulate right and left movements of the head. The contents of the tape, which are on the left side of the head are stored between the $\#$ and $\$$ as a stack. The symbol immediately to the left of the current head position is at the top of the stack.
 
 \begin{center}
-\includegraphics[scale=0.85]{Figures/Problem3.14a.pdf} \\
+\includegraphics[scale=0.8]{Figures/Problem3.14a.pdf} \\
 Organization of the queue.
 \end{center}
 
-Define four new operations that manipulate the contents of the queue.
+Define four new operations to manipulate the contents of the queue.
 \begin{enumerate}
 \item \textit{Rotate-All}. Repeatedly pull and push symbols until the $\$$ is pulled and pushed.
-\item \textit{Rotate-Input}. Repeatedly pull and push symbols until the $\sqcup$ is pulled and pushed.
+\item \textit{Rotate-Input}. Repeatedly pull and push symbols until the $\#$ is pulled and pushed.
 \item \textit{Stash}. Pull a symbol from the queue and place it on top of the embedded stack. To perform a stash, first pull an initial symbol and rotate-input. Then, push the symbol, which was pulled initially and rotate-all.
-\item \textit{Restore}. Remove top symbol from the embedded stack and place it on top of the queue. First, rotate-input, pull a symbol and then rotate-all. Push previously pulled symbol and rotate-all.
+\item \textit{Restore}. Remove top symbol from the embedded stack and place it on top of the queue. If the embedded stack is empty, then do nothing. Otherwise, first rotate-input, pull a symbol and then rotate-all. Then, push previously pulled symbol and rotate-all.
 \end{enumerate}
 
-All the operations of Turing machine tape can be simulate using above operations. To read and write at the current head position, pull from the queue, push the symbol to be written and rotate-all. Stash to move right, and restore to move left.
+All the operations of Turing machine tape can be simulated using above operations. To read and write at the current head position, pull from the queue, push the symbol to be written and rotate-all. Stash to move right, and restore to move left. While reading, if $\#$ is pulled, then interpret it as reading a blank. Also, writing happens a bit differently in this case. First, push $\#$ followed by rotate-all, and then push the symbol to be written and rotate-all again.
+
+
+
 
 \begin{center}
 \includegraphics[scale=0.8]{Figures/Problem3.14b.pdf} \\
