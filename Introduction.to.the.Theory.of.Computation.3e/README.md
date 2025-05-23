@@ -43,6 +43,10 @@
 - [ ] 2.48
 - [ ] 2.49
 - [ ] 2.50
+- [ ] 4.15 - CFG generates all strings in 1*
+- [ ] 4.18
+- [ ] 4.19
+- [ ] 4.30
 
 ### In Progress
 
