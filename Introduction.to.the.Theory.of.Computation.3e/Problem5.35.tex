@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+
+\input{Shared.tex}
+
+\parindent0in
+\pagestyle{plain}
+\thispagestyle{plain}
+
+\usepackage{csquotes}
+\usepackage[shortlabels]{enumitem}
+
+\newcommand{\dated}{\today}
+\newcommand{\token}[1]{\langle \text{#1} \rangle}
+
+\begin{document}
+
+\textbf{Introduction to the Theory of
+Computation}\hfill\textbf{\myname}\\[0.01in]
+\textbf{Chapter 5: Reducibility}\hfill\textbf{\dated}\\
+\smallskip\hrule\bigskip
+
+\begin{problem}{5.35}
+Say that a variable $A$ in CFG $G$ is necessary if it appears in every derivation of some string $w \in G$. Let $NECESSARY_{CFG} = \{\langle G, A \rangle \ | \ A \text{ is a necessary variable in } G\}$.
+\end{problem}
+
+\begin{problem}[Part]{a}
+Show that $NECESSARY_{CFG}$ is Turing-recognizable.
+\end{problem}
+
+\begin{proof}
+We construct a \textbf{\textit{TM}} $N$ which recognizes $NECESSARY_{CFG}$. \\
+\\
+$N =$ \textquotedblleft On input $\langle G, A \rangle$, where $G$ is a CFG and $A$ is a symbol:
+\begin{enumerate}
+\item If $A$ is not a variable in $G$, then \textit{reject}.
+\item Repeat for each $i = 0, 1, 2, \cdots$.
+\item \hspace*{0.5cm} Generate all strings $s_1, s_2, s_3, \cdots$ of length $i$, such that each $s_i \in L(G)$.
+\item \hspace*{0.5cm} If for some $s_i$ and $s_j$, where $s_i = s_j$ and $i \neq j$ and $A$ is included in the \\
+\hspace*{0.5cm} derivation of both $s_i$ and $s_j$, then \textit{accept}.\textquotedblright
+\end{enumerate}
+\end{proof}
+
+\begin{problem}[Part]{b}
+Show that $NECESSARY_{CFG}$ is undecidable.
+\end{problem}
+
+\begin{proof}
+\end{proof}
+
+\end{document}
