@@ -25,17 +25,5 @@ form $\{ww \ | \ w \in \{0,1\}^{*}\}$. Use the computation history method to sho
 \end{problem}
 
 \begin{proof}
-Let $B = \{\langle P \rangle \ | \ P \text{ is a PDA that accepts some string of the form } \{ww \ | \ w \in \{0,1\}^{*}\}$. This proof is by contradiction. To get the contradiction, we assume that $B$ is decidable and use this assumption to show that $A_{TM}$ is decidable. \\
-
-Follow the construction given in Theorem 5.13 to construct a CFG $G$ that generates all strings that are not accepting computation histories for $M$ on $w$.
-
-
-
-We use the construction given in Theorem 5.13 to construct a PDA $D$
-
-This proof is similar to that of Theorem 5.10 but with a small extra twist: It is a
-reduction from ATM via computation histories, but we modify the representation
-of the computation histories slightly for a technical reason that we will explain
-later.
 \end{proof}
 \end{document}
