@@ -44,7 +44,30 @@ $S =$ \textquotedblleft On input $\langle M, x \rangle$, where $M$ is a 2DFA and
 Let $E_{2DFA} = \{\langle M \rangle \ | \ M \text{ is a 2DFA and } L(M) = \emptyset   \}$. Show that $E_{2DFA}$ is not decidable.
 \end{problem}
 
+\begin{idea}
+The proof is by reduction from $A_{TM}$. We show that if $E_{2DFA}$
+were decidable, $A_{TM}$ would also be. For a \textbf{TM} $M$ and an input $w$, we can determine whether $M$ accepts $w$ by constructing a certain 2DFA $B$, such that the language that $B$ recognizes comprises all accepting computation histories for $M$ on $w$. \\
+
+We construct $B$ to accept its input $x$ if $x$ is an accepting computation history $C_1,C_2,\dots,C_l$ for $M$ on $w$. We assume that the accepting computation history is presented as a single string with the configurations separated from each other by the \# symbol, such as $\#C_1\#C_2\#\dots\#C_l\#$. Given and input $x$, $B$ determines
+whether the $C_i\text{'s}$ satisfy the three conditions of an accepting computation history.
+\begin{enumerate}
+\item $C_1$ is the start configuration for $M$ on $w$.
+\item Each $C_{i+1}$ legally follows from $C_i$.
+\item $C_l$ is an accepting configuration for $M$.
+\end{enumerate}
+The start configuration $C_1$ for $M$ on $w$ is the string $q_0w_1w_2 \dots w_n$, where $q_0$ is the start state for M on w. $B$ has this string directly built in, so it is able to check the first condition. An accepting configuration is one that contains the $q_{accept}$ state, so $B$ can check the third condition by scanning $C_l$ for $q_{accept}$. To make sure that the second condition is satisfied, $B$ checks on whether $C_{i+1}$ legally follows from $C_i$. This step involves verifying that $C_i$ and $C_{i+1}$ are identical except for the positions under and adjacent to the head in $C_i$. These positions must be updated according to the transition function of $M$.
+\end{idea}
+
 \begin{proof}
+Assume that \textbf{TM} $R$ decides $E_{2DFA}$. Construct \textbf{TM} $S$ to decide $A_{TM}$ as follows. \\
+
+$S =$ \textquotedblleft On input $\langle M, w \rangle$, where $M$ is a \textbf{TM} and $w$ is a string:
+\begin{enumerate}
+\item Construct 2DFA $B$ from $M$ and $w$ as described in the proof idea.
+\item Run $R$ on $\langle B \rangle$.
+\item If $R$ rejects, $M$ accepts $w$, so \textit{accept}. Otherwise, \textit{reject}.\textquotedblright
+\end{enumerate}
+Thus, if \textbf{TM} $R$ exists, we can decide $A_{TM}$, but we know that $A_{TM}$ is undecidable\footnote{Theorem 4.11 $A_{TM}$ is undecidable.}. By virtue of this contradiction, we can conclude that $R$ does not exist. Therefore, $E_{2DFA}$ is undecidable.
 \end{proof}
 
 \end{document}
