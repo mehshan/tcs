@@ -23,53 +23,45 @@ Computation}\hfill\textbf{\myname}\\[0.01in]
 Show that P is closed under the star operation.
 \end{problem}
 \begin{idea}
-For any language $A \in P$, a string $y = y_1 \cdots y_n \in A^{*}$, when one of following is true:
+For $A \in P$, a string $y = y_i \cdots y_j \in A^{*}$, where $i \leq j$, when one of following is true:
 \begin{enumerate}
-\item $y = \varepsilon$.
-\item $y \in A$.
-\item Both sub-strings of one of possible splits of $y$ are in $A^{*}$.
+\item $y_i \cdots y_j = \varepsilon$.
+\item $y_i \cdots y_{k-1} \in A^{*}$ and $y_k \cdots y_j \in A$, for some $i \leq k \leq j$.
 \end{enumerate}
 \begin{center}
-\includegraphics[scale=0.60]{Figures/Problem7.15a.pdf} \\
+\includegraphics[scale=0.7]{Figures/Problem7.15.pdf} \\
 Tree of sub-problems for a string of length 4. \\
 Non-shaded sub-problems are unique, whereas shaded are duplicate.
 \end{center}
 First, we give a recurive algorithm $C$ that tests if $A^{*}$ contains a string $y$. Secondly, we use \textit{Dynamic Programming} (recursion + memoinzation) to obtain a polynomial time algorithm $D$.
 \end{idea}
 
-\begin{proof}Let $A$ be any language in $P$ and $T$ be the \textbf{TM} that decides $A$ in polynomial time. \\
+\begin{proof}Let $A$ be any language in $P$, and $S$ be the \textbf{TM} that decides $A$ in polynomial time. \\
 
 $C =$ \textquotedblleft On input $\langle y, i, j \rangle$, where $y$ is a string and $i, j$ are integers:
 \begin{enumerate}
-\item If $y = \varepsilon$, then \textit{accept}.
-\item Use $T$ to check if $y_i \cdots y_j \in A$. If $T$ accepts, then \textit{accept}.
-\item Repeat for each $k$ between $i+1$ and $j$.
+\item If $y_i \cdots y_j = \varepsilon$, then \textit{accept}.
+\item Repeat for each $k$ between $i$ and $j$.
 \item \hspace*{0.5cm} Run $C$ on $\langle y, i, k - 1 \rangle$.
-\item \hspace*{0.5cm} Run $C$ on $\langle y, k, j \rangle$.
-\item \hspace*{0.5cm} \textit{Accept}, if $C$ accepts in both cases.
+\item \hspace*{0.5cm} Use $S$ to check if $y_k \cdots y_j \in A$.
+\item \hspace*{0.5cm} \textit{Accept}, if both $C$ and $S$ accept.
 \item \textit{Reject}.\textquotedblright
 \end{enumerate}
-Then decide $A^{*}$ by starting with $i=1$ and $j=|y|$.
+Then decide $A^{*}$ by starting with $i=1$ and $j=|y|$. \\
+
+$C$ takes non-polynomial time as it makes $2^{n}$ calls for a string for length $n$. We add memoinzation in $C$ to obtain algorithm $D$, which makes $O(n)$. Therefore, time used by $D$ is polynomial. \\
 
 $D =$ \textquotedblleft On input $\langle y, i, j \rangle$, where $y$ is a string and $i, j$ are integers:
 \begin{enumerate}
-\item If $y = \varepsilon$, then \textit{accept}.
 \item If previously solved then answer same, else continue.
-\item Use $T$ to check if $y_i \cdots y_j \in A$. If $T$ accepts, then \textit{accept}.
-\item Repeat for each $k$ between $i+1$ and $j$.
+\item If $y_i \cdots y_j = \varepsilon$, then \textit{accept}.
+\item Repeat for each $k$ between $i$ and $j$.
 \item \hspace*{0.5cm} Run $C$ on $\langle y, i, k - 1 \rangle$.
-\item \hspace*{0.5cm} Run $C$ on $\langle y, k, j \rangle$.
-\item \hspace*{0.5cm} \textit{Accept}, if $C$ accepts in both cases.
+\item \hspace*{0.5cm} Use $S$ to check if $y_k \cdots y_j \in A$.
+\item \hspace*{0.5cm} \textit{Accept}, if both $C$ and $S$ accept.
 \item \textit{Reject}.\textquotedblright
 \end{enumerate}
 Then decide $A^{*}$ by starting with $i=1$ and $j=|y|$.
-
-\begin{center}
-\includegraphics[scale=1.0]{Figures/Problem7.15b.pdf} \\
-Tree of sub-problems for a string $y = y_i \cdots y_j$. \\
-Shaded sub-problems are duplicate.
-\end{center}
-
 \end{proof}
 
 \end{document}
