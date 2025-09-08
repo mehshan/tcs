@@ -60,6 +60,13 @@ Show that $LPATH$ is NP-complete.
 \end{problem}
 
 \begin{proof}
+First, we need to show that $LPATH \in P$, which is easy as certificate is the path. Next, to show that all problems in $NP$ are polynomial time reducible to $LPATH$, we show $3SAT \leq_p LPATH$. We show how to construct an integer $k$ and an undirected graph $G$ with two nodes, $s$ and $t$, where a simple path of length at least $k$ exists between $s$ and $t$ , iff $\phi$ is satisfiable. \\
+
+Let $\phi$ be any Boolean formula in 3CNF containing $m$ clauses:
+\[
+\phi = (a_1 \vee b_1 \vee c_1) \ \wedge (a_2 \vee b_2 \vee c_2) \ \wedge \cdots \wedge (a_m \vee b_m \vee c_m).
+\]
+where each $a$, $b$ and $c$ is a literal $x_i$ or $\overline{x_i}$, and $x_1, x_2 \cdots x_l$ are the $l$ variables of $\phi$. Now we show how to convert $\phi$ to $G$.
 \end{proof}
 
 \end{document}
