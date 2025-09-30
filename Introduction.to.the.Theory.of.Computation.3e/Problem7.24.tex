@@ -31,7 +31,17 @@ Show that $CNF_2 \in P$.
 \end{problem}
 
 \begin{proof}
+We show that $CNF_2 \in P$ by presenting a polynomial time algorithm that decides $CNF_2$. A polynomial time algorithm $M$ for $CNF_2$ operates as follows. \\
+
+$M =$ \textquotedblleft On input $\langle \phi \rangle$, $\phi$ is a cnf-formula where each variable appears in at most 2 places:
+\begin{enumerate}
+\item Construct $\phi'$ by rewriting $\phi$ as OR of ANDs using distributive laws.
+\item If all conjunctions in $\phi'$ contain a contradiction, then \textit{reject}.
+\item \textit{Accept}.\textquotedblright
+\end{enumerate}
 \end{proof}
+
+Let $x_1, x_2, \cdots, x_l$ be the variables of $\phi$. The maximum number of clauses in $\phi$ can be at most $2l$. The distributive laws, as described in Chapter 0, state that we can replace an AND of ORs with an equivalent OR of ANDs. Doing so may significantly increase the size of each subformula, but it creates at most polynomial number of conjunctions.
 
 \begin{problem}[Part]{b}
 Show that $CNF_3$ is NP-complete.
